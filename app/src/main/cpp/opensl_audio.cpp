@@ -17,8 +17,8 @@
 
 //打印日志
 #include <android/log.h>
-#define LOGI(FORMAT,...) __android_log_print(ANDROID_LOG_INFO,"renhui",FORMAT,##__VA_ARGS__);
-#define LOGE(FORMAT,...) __android_log_print(ANDROID_LOG_ERROR,"renhui",FORMAT,##__VA_ARGS__);
+#define LOGI(FORMAT,...) __android_log_print(ANDROID_LOG_INFO,"pengjie0668",FORMAT,##__VA_ARGS__);
+#define LOGE(FORMAT,...) __android_log_print(ANDROID_LOG_ERROR,"pengjie0668",FORMAT,##__VA_ARGS__);
 
 
 // 引擎接口
