@@ -1,7 +1,3 @@
-//
-// Created by hlwky001 on 2018/7/20.
-//
-
 #ifndef OPENSL_AUDIO_PCMDATA_H
 #define OPENSL_AUDIO_PCMDATA_H
 

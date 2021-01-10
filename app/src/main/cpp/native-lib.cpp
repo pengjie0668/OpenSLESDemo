@@ -39,7 +39,6 @@ void bqRecorderCallback(SLAndroidSimpleBufferQueueItf bq, void *context)
 {
     // for streaming recording, here we would call Enqueue to give recorder the next buffer to fill
     // but instead, this is a one-time buffer so we stop recording
-    LOGD("record size is %d", recorderSize);
 
     fwrite(recordBuffer->getNowBuffer(), 1, recorderSize, inputPcmFile);
 
@@ -47,7 +46,6 @@ void bqRecorderCallback(SLAndroidSimpleBufferQueueItf bq, void *context)
     {
         (*recorderRecord)->SetRecordState(recorderRecord, SL_RECORDSTATE_STOPPED);
         fclose(inputPcmFile);
-        LOGD("停止录音");
     } else{
         (*recorderBufferQueue)->Enqueue(recorderBufferQueue, recordBuffer->getRecordBuffer(),
                                         recorderSize);
@@ -114,7 +112,6 @@ Java_com_pengjie0668_opensles_demo_MainActivity_rdSound(JNIEnv *env, jobject ins
     result = (*recorderBufferQueue)->Enqueue(recorderBufferQueue, recordBuffer->getRecordBuffer(),
                                              recorderSize);
     result = (*recorderBufferQueue)->RegisterCallback(recorderBufferQueue, bqRecorderCallback, NULL);
-    LOGD("开始录音");
     /**
      * 开始录音
      */
